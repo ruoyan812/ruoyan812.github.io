@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>妈妈生日快乐</title><style>body{background:#ffe6f2;margin:0;padding:0;font-family:sans-serif}.nav{display:flex;background:#ff66b2;padding:10px;justify-content:center}.nav a{color:white;text-decoration:none;margin:0 10px;padding:5px}.page{display:none;padding:20px;text-align:center}.active{display:block}.heart{color:#ff0066;animation:pulse 1s infinite}@keyframes pulse{0%{transform:scale(1)}50%{transform:scale(1.2)}100%{transform:scale(1)}}.photo{width:150px;height:150px;margin:10px;display:inline-block;background:#ffccdd;border-radius:10px}.timeline{max-width:400px;margin:20px auto;text-align:left}.event{margin:10px 0;padding:10px;background:white;border-radius:5px}.msg{background:white;padding:10px;margin:10px;border-radius:5px}</style></head><body>
+<div class="nav">
+ <a href="#" onclick="showPage(0)">首页</a>
+ <a href="#" onclick="showPage(1)">祝福</a>
+ <a href="#" onclick="showPage(2)">照片</a>
+ <a href="#" onclick="showPage(3)">回忆</a>
+ <a href="#" onclick="showPage(4)">留言</a>
+</div>
+<div id="pages">
+ <div class="page active">
+  <h1>❤️ 妈妈生日快乐 ❤️</h1>
+  <p>亲爱的妈妈，今天是您的特别日子！</p>
+  <div class="heart">♥</div>
+  <p>感谢您无条件的爱与付出。</p>
+  <p>愿您健康、快乐每一天！</p>
+ </div>
+ <div class="page">
+  <h2>生日祝福</h2>
+  <div class="msg">
+   <h3>给最爱的妈妈：</h3>
+   <p>您是我生命中最温暖的光，</p>
+   <p>是我永远的避风港。</p>
+   <p>祝您生日快乐，永远年轻！</p>
+  </div>
+  <div class="msg">
+   <h3>我的愿望：</h3>
+   <p>愿您笑容常驻，</p>
+   <p>愿您健康平安，</p>
+   <p>愿您幸福每一天！</p>
+  </div>
+ </div>
+ <div class="page">
+  <h2>美好记忆</h2>
+  <div class="photo">📷 全家福</div>
+  <div class="photo">🎂 生日蛋糕</div>
+  <div class="photo">🌺 妈妈的花</div>
+  <div class="photo">❤️ 温馨时刻</div>
+  <p>（上传照片位置）</p>
+ </div>
+ <div class="page">
+  <h2>时光记忆</h2>
+  <div class="timeline">
+   <div class="event">💕 您的爱，伴我成长每一天</div>
+   <div class="event">🏡 家的温暖，因您而存在</div>
+   <div class="event">🍳 难忘的美味，是妈妈的味道</div>
+   <div class="event">🤗 温暖的拥抱，永远的港湾</div>
+   <div class="event">🎉 今天，为您庆祝！</div>
+  </div>
+ </div>
+ <div class="page">
+  <h2>留言祝福</h2>
+  <p>写下对妈妈的祝福：</p>
+  <div style="max-width:300px;margin:0 auto">
+   <input type="text" placeholder="您的名字" style="width:100%;margin:5px;padding:5px"><br>
+   <textarea placeholder="祝福语" rows=3 style="width:100%;margin:5px;padding:5px"></textarea><br>
+   <button onclick="alert('祝福已保存！')" style="background:#ff66b2;color:white;border:none;padding:8px 20px;border-radius:5px">送出祝福</button>
+  </div>
+  <h3>祝福墙：</h3>
+  <div class="msg">祝妈妈生日快乐！ - 爱您的孩子</div>
+  <div class="msg">妈妈辛苦了，永远爱您！ - 家人</div>
+ </div>
+</div>
+<script>function showPage(n){document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));document.querySelectorAll('.page')[n].classList.add('active')}</script>
+<footer style="text-align:center;padding:20px;color:#666">
+ <p>❤️ 献给最爱的妈妈 ❤️</p>
+ <p>© 2023 生日祝福</p>
+</footer>
+</body></html>
