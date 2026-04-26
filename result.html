@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>搜索结果</title>
+    <style>
+        body { font-family: Arial; text-align: center; }
+        iframe {
+            width: 90%;
+            height: 700px;
+            border: 1px solid #ddd;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>搜索结果</h2>
+
+    <iframe id="resultFrame"></iframe>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const q = params.get('q');
+        if (q) {
+            document.getElementById('resultFrame').src =
+                'https://www.baidu.com/s?wd=' + encodeURIComponent(q);
+        }
+    </script>
+
+</body>
+</html>
