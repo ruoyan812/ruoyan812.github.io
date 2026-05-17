@@ -116,6 +116,7 @@ setInterval(updateTime, 1000);
     <a href="search">Search</a><br>
   </body>
     <div class="container">
+      <a>为我们做出评价与意见修改</a>
     <input id="name" placeholder="请输入姓名，匿名请填写匿名用户">
       <textarea id="message" placeholder="请输入要发送的内容"></textarea>
     <br>
@@ -151,7 +152,7 @@ function sendMail() {
             username: name
         }
     ).then(() => {
-        status.innerText = "✅ 发送成功";
+        status.innerText = "✅ 发送成功，感谢您的支持与反馈";
         document.getElementById('message').value = "";
     }).catch(() => {
         status.innerText = "❌ 发送失败";
