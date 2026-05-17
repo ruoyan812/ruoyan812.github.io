@@ -6,23 +6,25 @@
     <p><strong>Welcome to Yanverse !</strong></p>
     <style>
 .time-box {
-    width: 280px;
-    padding: 20px;
-    margin: 100px auto;
-    background: #fff;
-    border-radius: 10px;
+    width: 260px;
+    padding: 15px 20px;
+    margin: 40px 0 0 40px;   /* 靠左 + 顶部间距 */
+    background: #ffffff;    /* 白底 */
+    border-radius: 0;       /* 无圆角 */
+    text-align: left;
     font-family: Arial, sans-serif;
+    line-height: 1.8;
 }
 
 .time {
-    font-size: 34px;
+    font-size: 32px;
+    font-weight: bold;
     color: #222;
 }
 
 .date {
     font-size: 14px;
     color: #666;
-    margin-top: 8px;
 }
 </style>
   </head>
@@ -54,7 +56,6 @@ fetch('https://ipapi.co/json/')
 function updateTime() {
     const now = new Date();
 
-    // 使用用户本地时区 & 24小时制
     const timeStr = now.toLocaleTimeString('zh-CN', {
         hour12: false,
         hour: '2-digit',
