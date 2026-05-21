@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>意见反馈 - Yanverse</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <header class="header">
+        <h1>意见与建议</h1>
+    </header>
+
+    <main class="container">
+        <form onsubmit="event.preventDefault(); sendMail();">
+            <label>姓名</label>
+            <input id="name" placeholder="匿名用户">
+
+            <label>反馈内容</label>
+            <textarea id="message" rows="5" placeholder="请输入您的建议"></textarea>
+
+            <button type="submit">发送</button>
+            <p id="status"></p>
+        </form>
+    </main>
+
+    <footer>
+        <code>© 2013 - 2026 Yanverse</code>
+    </footer>
+
+    <!-- EmailJS -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+        emailjs.init("O0c6Hvi0DVvWYqvM_");
+
+        function sendMail() {
+            const name = document.getElementById('name').value;
+            const msg = document.getElementById('message').value;
+            const status = document.getElementById('status');
+
+            if (!msg.trim()) {
+                status.innerText = "⚠️ 内容不能为空";
+                return;
+            }
+
+            emailjs.send(
+                "service_okc5com",
+                "template_3pk0hiq",
+                {
+                    content: msg,
+                    time: new Date().toLocaleString('zh-CN'),
+                    page_url: location.href,
+                    username: name
+                }
+            ).then(() => {
+                status.innerText = "✅ 发送成功，感谢您的支持";
+                document.getElementById('message').value = "";
+            }).catch(() => {
+                status.innerText = "❌ 发送失败";
+            });
+        }
+    </script>
+</body>
+</html>
